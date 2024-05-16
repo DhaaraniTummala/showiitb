@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>show+tell</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <style>
+        .circularcursor {
+            background-color: black;
+            border: 1px solid black;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            -moz-border-radius: 50%;
+            -webkit-border-radius: 50%;
+            position: absolute;
+            z-index: 1;
+        }
+
+        .nav {
+            display: flex;
+        }
+
+        .show {
+            font-family: var(--twk-everett);
+            font-weight: 500;
+            margin-left: 20px;
+            font-size: 30px;
+            margin-top: 23px;
+        }
+
+        .tell {
+            font-family: var(--twk-everett);
+            font-weight: 500;
+            font-size: 30px;
+            margin-top: 23px;
+        }
+
+        .plus {
+            color: grey;
+            font-size: 25px;
+            margin-left: 4px;
+            margin-right: 3px;
+            margin-top: 23px;
+        }
+
+        .work {
+            margin-left: 525px;
+            color: rgb(84, 84, 82);
+            text-decoration: none;
+            font-size: 22px;
+            font: weight 10px;
+            font-family: var(--twk-everett);
+        }
+
+        .studio, .service, .sectors, .insights, .careers {
+            color: rgb(84, 84, 82);
+            text-decoration: none;
+            margin-left: 15px;
+            font-size: 22px;
+            font-family: var(--twk-everett);
+        }
+
+        .button1 {
+            background-color: black;
+            color: white;
+            margin-left: 16px;
+            height: 50px;
+            width: 130px;
+            border-radius: 25px;
+            margin-right: 0px;
+        }
+
+        .button2 {
+            background-color: black;
+            color: white;
+            height: 50px;
+            width: 50px;
+            border-radius: 25px;
+            margin-left: 0px;
+        }
+
+        html, body {
+            margin: 0;
+            height: 100%;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Split page into two columns */
+            height: 100%;
+        }
+
+        .left-part {
+            background-color: #f1f1f1; /* Background color for left part */
+            padding: 20px;
+            position: relative; /* Needed for absolute positioning */
+        }
+
+        .scroll {
+            position: absolute;
+            top: 200px;
+            width: 100%;
+            overflow: hidden;
+            z-index: 2; /* Ensure it's above other content */
+        }
+
+        .m-scroll {
+            display: flex;
+            white-space: nowrap;
+            animation: scrollText 10s infinite linear;
+        }
+
+        .m-scroll h1 {
+            margin: 0;
+            margin-right: 150px;
+            font-size: 100px;
+            color: black;
+            transition: all 10s ease;
+        }
+
+        @keyframes scrollText {
+            from {
+                transform: translateX(0%);
+            }
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        .leftp {
+            font-size: 30px;
+            max-width: 500px;
+            font-family: var(--twk-everett);
+            margin-left: 100px;
+            color: rgb(111, 105, 105);
+            margin-top: 450px;
+            line-height: 1.5;
+        }
+
+        .video-container {
+            position: relative;
+            overflow: hidden;
+            z-index: 1; /* Ensure video stays above other content */
+        }
+
+        .video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+        }
+
+        .pbutton{
+            border: none;
+            margin-left: 90px;
+            text-decoration: underline;
+            line-height: 3;
+        }
+
+        .para{
+            font-size: 55px;
+            margin-left: 60px;
+            font-family: var(--twk-everett);
+            color: grey;
+        }
+
+        .first{
+            height: 60px;
+            border-radius: 3px;
+            background-color: white;
+            border-radius: 25px;
+            width: 160px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+<script>
+    $(document).ready(function () {
+        $(document).on('mousemove', function (e) {
+            $('.circularcursor').css({
+                left: e.pageX,
+                top: e.pageY
+            });
+        })
+    });
+</script>
+<div class="nav">
+    <p class="show">Show</p>
+    <p class="plus">+</p>
+    <p class="tell">Tell</p>
+    <div style="margin-top: 20px;">
+        <a class="work" href="#work">Work</a>
+        <a class="studio" href="#stdio">Studio</a>
+        <a class="service" href="#service">Service</a>
+        <a class="sectors" href="#sectors">Sectors</a>
+        <a class="insights" href="#insights">Insights</a>
+        <a class="careers" href="#careers">Careers</a>
+        <button class="button1">Start a project</button>
+        <button class="button2">&#8599;</button>
+    </div>
+</div>
+<div class="container">
+    <div class="left-part">
+        <div class="scroll">
+            <div class="m-scroll">
+                <div>
+                    <h1>
+                        <span>We make every interaction count  &#x2726;    </span><span>We make every interaction count  &#x2726;</span><span>We make every interaction count  &#x2726;</span>
+                    </h1>
+                </div>
+            </div>
+        </div>
+        <p class="leftp">A Digital-first branding & web product agency expertly creating impactful experiences for high growth brands</p>
+        <button class="pbutton">Scroll + explore</button>
+    </div>
+    <div class="video-container">
+        <video class="video" autoplay muted loop>
+            <source src="C:\Users\dhaar\OneDrive\Documents\Desktop\dhaarani\HTML\Black Animated Cool Collage Advertising Video.mp4" type="video/mp4">
+        </video>
+    </div>
+</div>
+
+<p class="para">Show + Tell is a <span><button class="first">DIGITAL-FIRST</button></span> branding and technology </p><p class="para">agency, enabling companies to connect with their</p><p class="para"></i>> audience, extend their reach and enjoy greater <span><button class="first">COMMERCIAL</button></span> success.</p>
+</body>
+</html>
